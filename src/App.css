@@ -1,38 +1,127 @@
-.App {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* { padding:0; margin:0; outline:0; }
+
+h1, h2, h3, h4, h5, h6, ul, ol, p {
+  margin: 0;
+}
+
+input, textarea, select { font-family: Arial, sans-serif; font-size:11px; }
+a img { border:0; }
+a {text-decoration: none; cursor:pointer; }
+.cl { font-size:0; line-height:0; clear:both; display:block; height:0; }
+
+body {
+  padding:0;
+  margin:0;
+  outline:0;
+  font-family: 'Gotham-Book';
+  background-color: #191919;
+  color: #fff;
+}
+
+i {
+  font-size: 40px;
+}
+
+.logo-img {
+  width: 100%;
+  max-width: 400px;
+  object-fit: contain;
+  height: auto;
+  margin: 0 auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Main Page */
+.main-page {
+  padding: 2rem 5px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.main-page h1 {
+  text-align: center;
+  font-family: 'Gotham-Bold';
+  border-bottom: 2px solid #fff;
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 950px) {
+  .main-page h1 {
+    width: 95%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 360px) {
+  .main-page h1 {
+    font-size: 28px;
   }
+}
+
+/* Modules */
+.modules {
+  width: 100%;
+}
+
+.modules h2 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 526px) {
+  .modules h2 {
+    width: 60%;
+  }
+}
+
+.modules .modules-wrapper {
+  width: 100%;
+  max-width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+.modules .modules-wrapper .module {
+  width: 200px;
+  height: 300px;
+  background-color: #3d3d3d;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: center;
+  border: 1px solid black;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.modules .modules-wrapper .module .id {
+  font-family: 'Gotham-Bold';
+}
+
+.modules .modules-wrapper .module a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.modules .modules-wrapper .module .disabled {
+  text-decoration: line-through;
+  pointer-events: none;
+  cursor: default;
+}
+
+.modules .modules-wrapper .module a:hover {
+  color: red;
 }
